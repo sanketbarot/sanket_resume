@@ -1,0 +1,151 @@
+/* Set up A4 size for printing */
+@page {
+    size: A4;
+    margin: 15mm; /* Standard print margin */
+}
+
+/* General Body Styling */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    line-height: 1.5;
+    display: flex;
+    justify-content: center;
+}
+
+/* A4 Paper Layout */
+.resume-container {
+    width: 210mm; /* Standard A4 width */
+    min-height: 297mm; /* Standard A4 height */
+    background-color: #ffffff;
+    padding: 20mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow for screen view */
+}
+
+header {
+    background: #f0f0f0; /* Very Light Grey */
+    color: #333;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 4px solid #d3d3d3; /* Softer Bottom Border */
+}
+
+
+.header-content h1 {
+    font-size: 28px;  /* Adjusted for print readability */
+    margin: 5px 0;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.header-content h2 {
+    font-size: 20px;
+    margin: 5px 0;
+    font-weight: 600;
+}
+
+.header-content .contact {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+/* Main Content Layout */
+.main-content {
+    padding: 8mm;
+    width: 100%;
+    max-width: 170mm; /* Ensuring it fits within A4 printable area */
+    margin: auto;
+}
+
+/* Section Titles */
+.section h3 {
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.section h3 i {
+    color: #5d3a8a;
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+/* Skills Section Styling */
+.skills-text {
+    font-size: 16px;
+    color: #000; /* Black text */
+    font-weight: 600;
+    display: grid;
+    grid-template-columns: repeat(2, auto); /* Two skills per row */
+    gap: 10px 40px; /* Adjust spacing between items */
+    margin-top: 10px;
+}
+
+/* Underlined Skills with Hover Effect */
+.skills-text span {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000; /* Black text */
+    position: relative;
+    padding-bottom: 3px;
+    border-bottom: 2px solid transparent; /* Hidden border */
+    transition: border-color 0.3s ease-in-out;
+}
+
+/* Add a small arrow before each skill */
+.skills-text span::before {
+    content: "➤";  /* Custom Arrow */
+    color: #5d3a8a; /* Dark Lavender */
+    margin-right: 6px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+/* Paragraph & List Styles */
+p, ul li {
+    font-size: 14px;
+    color: #444;
+}
+
+/* Bold Text */
+strong {
+    font-weight: 700;
+}
+
+/* Print-Specific Styles */
+@media print {
+    body {
+        background: none;
+        color: black;
+    }
+
+    .resume-container {
+        box-shadow: none;
+        border-radius: 0;
+        width: 210mm; /* Ensuring correct A4 width */
+        min-height: 297mm; /* Ensuring correct A4 height */
+        page-break-after: always;
+    }
+
+    header {
+        padding: 12px;
+    }
+
+    .main-content {
+        padding: 8mm;
+    }
+}
+
+/* Contact Icons - Change Color to Lavender */
+.contact i {
+    color: #5d3a8a; /* Lavender Color */
+    margin-right: 5px;
+}
