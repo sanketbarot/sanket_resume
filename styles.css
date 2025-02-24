@@ -1,176 +1,268 @@
-/* Ensure A4 size for both screen and print */
-@page {
-    size: A4;
-    margin: 20mm;
-}
-
+/* Global Styles */
 body {
     font-family: 'Roboto', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
+    background-color: #f8f8f8;
     line-height: 1.6;
     display: flex;
     justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
-/* A4 Paper Layout */
+/* Resume Container */
 .resume-container {
-    width: 210mm;
-    min-height: 297mm;
+    width: 90%;
+    max-width: 900px;
     background-color: #ffffff;
-    border-radius: 5px;
-    padding: 20mm;
+    border-radius: 8px;
+    padding: 25px;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Header Styling - Lighter Grey */
+/* Header Section */
 header {
-    background: #f5f5f5; /* Very Light Grey */
-    color: #333;
-    padding: 20px;
+    background: #f5f5f5; /* Light grey background */
+    padding: 40px 20px;
     text-align: center;
-    border-bottom: 4px solid #d3d3d3; /* Softer Bottom Border */
-}
-
-.header-content h1 {
-    font-size: 32px;
-    margin: 5px 0;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #000;
-}
-
-.header-content h2 {
-    font-size: 22px;
-    margin: 5px 0;
-    font-weight: 600;
-    color: #000;
-}
-
-/* Contact Information */
-.header-content .contact {
-    font-size: 16px;
-    color: #333;
-    margin: 10px 0;
-}
-
-/* Change phone & email icon color to Dark Lavender */
-.header-content .contact i {
-    color: #5d3a8a; /* Dark Lavender */
-    margin-right: 5px;
-}
-
-/* Main Content Layout */
-.main-content {
-    display: block;
-    padding: 10mm;
+    border-bottom: 4px solid #bdbdbd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    max-width: 170mm; /* Fits within A4 printable area */
-    margin: auto;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #333; /* Darker text for better contrast */
+    min-height: 200px; /* Prevents collapsing */
+    box-sizing: border-box;
+}
+
+/* Profile Image */
+header img {
+    display: block;
+    max-width: 130px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+/* Header Content */
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+}
+
+/* Name Heading */
+.header-content h1 {
+    font-size: 2.8rem;
+    margin: 5px 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    color: #222;
+}
+
+/* Subheading */
+.header-content h2 {
+    font-size: 1.5rem;
+    color: #555;
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+/* Contact Section */
+.header-content .contact {
+    font-size: 1.2rem;
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 850px;
+}
+
+/* Contact Item */
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* Contact Icons */
+.contact-item i {
+    color: #333;
+    font-size: 1.3rem;
+}
+
+/* Main Content */
+.main-content {
+    padding: 25px;
 }
 
 /* Section Titles */
 .section h3 {
-    font-size: 20px;
-    color: #000;
-    font-weight: 700;
+    font-size: 1.6rem;
+    color: #333;
+    font-weight: bold;
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
 .section h3 i {
-    color: #000; /* Dark Lavender */
-    font-size: 18px;
+    color: #5d3a8a;
+    font-size: 1.3rem;
 }
 
-/* Skills Section - Two Skills Per Row with Icons */
+/* Skills Section */
 .skills-text {
-    font-size: 16px;
-    color: #000;
-    font-weight: 600;
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
-    margin-left: 10px;
+    gap: 10px;
+    justify-content: space-between;
 }
 
 .skills-text span {
-    flex: 1 1 calc(50% - 10px); /* Two skills per row */
+    flex: 1 1 calc(50% - 10px);
     display: flex;
     align-items: center;
     gap: 8px;
+    font-size: 1rem;
 }
 
-/* Skill Icons */
-.skills-text i {
-    color: #5d3a8a; /* Dark Lavender */
-    font-size: 18px;
-}
-
-
-/* Paragraph & List Styles */
-p, ul li {
-    font-size: 16px;
-    color: #444;
-}
-
-/* Bold Text */
-strong {
-    color: #000;
-    font-weight: 700;
-}
-
-.summary-text {
-    font-size: 16px;
-    color: #000; /* Black color */
-    font-weight: 400; /* Normal weight for readability */
-    line-height: 1.6; /* Spacing for better readability */
-}
-
-/* Experience Section Styling */
+/* Experience & Education */
 .job h4 {
-    font-size: 18px;
-    color: #000; /* Black color for job title */
-    font-weight: 700; /* Bold for emphasis */
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
 .job p {
-    font-size: 16px;
-    color: #000; /* Black color for company & date */
+    font-size: 1rem;
     font-weight: 500;
 }
 
-.job ul li {
-    font-size: 16px;
-    color: #000; /* Black color for bullet points */
-    line-height: 1.6; /* Better readability */
+/* RESPONSIVE DESIGN */
+
+/* ✅ Large Screens (1980x1080 and above) */
+@media screen and (min-width: 1200px) {
+    header {
+        padding: 50px;
+    }
+
+    .header-content h1 {
+        font-size: 3rem;
+    }
+
+    .header-content h2 {
+        font-size: 1.7rem;
+    }
+
+    .header-content .contact {
+        font-size: 1.3rem;
+    }
+
+    .contact-item {
+        font-size: 1.2rem;
+    }
+
+    .contact-item i {
+        font-size: 1.4rem;
+    }
 }
 
-
-
-/* Print-Specific Styles */
-@media print {
-    body {
-        background: none;
-        color: black;
-    }
-    
-    .resume-container {
-        box-shadow: none;
-        border-radius: 0;
-        page-break-after: always;
-    }
-    
+/* ✅ Tablets (768px - 1200px) */
+@media screen and (max-width: 1200px) {
     header {
-        padding: 15px;
+        padding: 35px;
     }
-    
-    .main-content {
-        padding: 10mm;
+
+    .header-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .header-content h2 {
+        font-size: 1.4rem;
+    }
+
+    .header-content .contact {
+        gap: 15px;
+        font-size: 1.1rem;
+    }
+
+    .contact-item {
+        font-size: 1rem;
+    }
+
+    .contact-item i {
+        font-size: 1.2rem;
+    }
+}
+
+/* ✅ Mobile (Max-width: 768px) */
+@media screen and (max-width: 768px) {
+    header {
+        background: #d6d6d6; /* Lighter grey for smaller screens */
+        padding: 25px;
+    }
+
+    .header-content h1 {
+        font-size: 2rem;
+    }
+
+    .header-content h2 {
+        font-size: 1.2rem;
+    }
+
+    .header-content .contact {
+        gap: 12px;
+        flex-direction: column;
+        font-size: 1rem;
+    }
+
+    .contact-item {
+        font-size: 1rem;
+    }
+
+    .contact-item i {
+        font-size: 1.1rem;
+    }
+}
+
+/* ✅ Small Mobile Screens (Max-width: 480px) */
+@media screen and (max-width: 480px) {
+    header {
+        background: #cccccc; /* Even lighter grey */
+        padding: 20px;
+    }
+
+    .header-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .header-content h2 {
+        font-size: 1.1rem;
+    }
+
+    .header-content .contact {
+        gap: 10px;
+        font-size: 0.9rem;
+    }
+
+    .contact-item {
+        font-size: 0.9rem;
+    }
+
+    .contact-item i {
+        font-size: 1rem;
     }
 }
