@@ -1,124 +1,157 @@
-/* Set up A4 size for printing */
+/* Ensure A4 size for both screen and print */
 @page {
     size: A4;
-    margin: 15mm; /* Standard print margin */
+    margin: 20mm;
 }
 
-/* General Body Styling */
 body {
     font-family: 'Roboto', Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #ffffff;
-    line-height: 1.5;
+    line-height: 1.6;
     display: flex;
     justify-content: center;
 }
 
 /* A4 Paper Layout */
 .resume-container {
-    width: 210mm; /* Standard A4 width */
-    min-height: 297mm; /* Standard A4 height */
+    width: 210mm;
+    min-height: 297mm;
     background-color: #ffffff;
+    border-radius: 5px;
     padding: 20mm;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow for screen view */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Header Styling - Lighter Grey */
 header {
-    background: #f0f0f0; /* Very Light Grey */
+    background: #f5f5f5; /* Very Light Grey */
     color: #333;
     padding: 20px;
     text-align: center;
     border-bottom: 4px solid #d3d3d3; /* Softer Bottom Border */
 }
 
-
 .header-content h1 {
-    font-size: 28px;  /* Adjusted for print readability */
+    font-size: 32px;
     margin: 5px 0;
     font-weight: 700;
     text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #000;
 }
 
 .header-content h2 {
-    font-size: 20px;
+    font-size: 22px;
     margin: 5px 0;
     font-weight: 600;
+    color: #000;
 }
 
+/* Contact Information */
 .header-content .contact {
-    font-size: 14px;
+    font-size: 16px;
+    color: #333;
     margin: 10px 0;
+}
+
+/* Change phone & email icon color to Dark Lavender */
+.header-content .contact i {
+    color: #5d3a8a; /* Dark Lavender */
+    margin-right: 5px;
 }
 
 /* Main Content Layout */
 .main-content {
-    padding: 8mm;
+    display: block;
+    padding: 10mm;
     width: 100%;
-    max-width: 170mm; /* Ensuring it fits within A4 printable area */
+    max-width: 170mm; /* Fits within A4 printable area */
     margin: auto;
 }
 
 /* Section Titles */
 .section h3 {
-    font-size: 18px;
+    font-size: 20px;
+    color: #000;
     font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section h3 i {
+    color: #000; /* Dark Lavender */
+    font-size: 18px;
+}
+
+/* Skills Section - Two Skills Per Row with Icons */
+.skills-text {
+    font-size: 16px;
+    color: #000;
+    font-weight: 600;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-left: 10px;
+}
+
+.skills-text span {
+    flex: 1 1 calc(50% - 10px); /* Two skills per row */
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
-.section h3 i {
-    color: #5d3a8a;
-    font-size: 16px;
-    vertical-align: middle;
-}
-
-/* Skills Section Styling */
-.skills-text {
-    font-size: 16px;
-    color: #000; /* Black text */
-    font-weight: 600;
-    display: grid;
-    grid-template-columns: repeat(2, auto); /* Two skills per row */
-    gap: 10px 40px; /* Adjust spacing between items */
-    margin-top: 10px;
-}
-
-/* Underlined Skills with Hover Effect */
-.skills-text span {
-    font-size: 16px;
-    font-weight: bold;
-    color: #000; /* Black text */
-    position: relative;
-    padding-bottom: 3px;
-    border-bottom: 2px solid transparent; /* Hidden border */
-    transition: border-color 0.3s ease-in-out;
-}
-
-/* Add a small arrow before each skill */
-.skills-text span::before {
-    content: "➤";  /* Custom Arrow */
+/* Skill Icons */
+.skills-text i {
     color: #5d3a8a; /* Dark Lavender */
-    margin-right: 6px;
-    font-size: 14px;
-    font-weight: bold;
+    font-size: 18px;
 }
 
 
 /* Paragraph & List Styles */
 p, ul li {
-    font-size: 14px;
+    font-size: 16px;
     color: #444;
 }
 
 /* Bold Text */
 strong {
+    color: #000;
     font-weight: 700;
 }
+
+.summary-text {
+    font-size: 16px;
+    color: #000; /* Black color */
+    font-weight: 400; /* Normal weight for readability */
+    line-height: 1.6; /* Spacing for better readability */
+}
+
+/* Experience Section Styling */
+.job h4 {
+    font-size: 18px;
+    color: #000; /* Black color for job title */
+    font-weight: 700; /* Bold for emphasis */
+}
+
+.job p {
+    font-size: 16px;
+    color: #000; /* Black color for company & date */
+    font-weight: 500;
+}
+
+.job ul li {
+    font-size: 16px;
+    color: #000; /* Black color for bullet points */
+    line-height: 1.6; /* Better readability */
+}
+
+
 
 /* Print-Specific Styles */
 @media print {
@@ -126,26 +159,18 @@ strong {
         background: none;
         color: black;
     }
-
+    
     .resume-container {
         box-shadow: none;
         border-radius: 0;
-        width: 210mm; /* Ensuring correct A4 width */
-        min-height: 297mm; /* Ensuring correct A4 height */
         page-break-after: always;
     }
-
+    
     header {
-        padding: 12px;
+        padding: 15px;
     }
-
+    
     .main-content {
-        padding: 8mm;
+        padding: 10mm;
     }
-}
-
-/* Contact Icons - Change Color to Lavender */
-.contact i {
-    color: #5d3a8a; /* Lavender Color */
-    margin-right: 5px;
 }
