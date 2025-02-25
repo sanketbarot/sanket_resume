@@ -1,0 +1,341 @@
+/* Global Styles */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.resume-container {
+    width: 210mm;              /* A4 width */
+    min-height: 297mm;         /* A4 height */
+    background-color: #fff;
+    padding: 20mm;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+/* ================================= */
+/*      Animation Keyframes          */
+/* ================================= */
+@keyframes popIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+}
+
+/* ================================= */
+/*         Header Section            */
+/* ================================= */
+header {
+    background-color: #f9f9f9;  /* Very light grey */
+    border-bottom: 2px solid #ddd;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: background-color 0.5s ease;
+}
+
+header:hover {
+    background-color: #f2f2f2;
+}
+
+.header-content {
+    position: relative;
+}
+
+/* Main Heading Animation: Only H1 is animated */
+.header-content h1 {
+    font-size: 28px;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #000;
+    animation: popIn 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.header-content h2 {
+    font-size: 16px;
+    margin: 5px 0 0;
+    color: #000;
+    animation: fadeIn 1s ease-out;
+    animation-delay: 0.5s;
+}
+
+/* Contact Details */
+.header-content .contact {
+    margin-top: 10px;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Icon Animations: Hover zoom for icons */
+.contact-item i {
+    color: #5d3a8a;  /* Dark Lavender */
+    transition: transform 0.3s ease;
+}
+
+.contact-item i:hover {
+    transform: scale(1.1);
+}
+
+/* ================================= */
+/*         Section Titles            */
+/* ================================= */
+.section h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    animation: slideInBounce 0.8s ease-out;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.section h3:hover {
+    color: #5d3a8a; /* Dark Lavender */
+    border-bottom-color: #5d3a8a;
+    cursor: pointer;
+}
+
+/* H3 Active State: Change text and border color when clicked */
+.section h3:active {
+    color: #222;  /* Darker shade */
+    border-bottom-color: #222;
+}
+
+
+/* ================================= */
+/*         Summary Text              */
+/* ================================= */
+.summary-text {
+    font-size: 14px;
+    color: #000;
+    line-height: 1.4;
+    margin: 10px 0;
+}
+
+/* ================================= */
+/*         Skills Section            */
+/* ================================= */
+.skills-text {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.skills-text span {
+    font-size: 14px;
+    color: #000;
+    flex: 1 1 calc(50% - 10px);  /* Two skills per row on larger screens */
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.skills-text i {
+    color: #5d3a8a;  /* Dark Lavender */
+    transition: transform 0.3s ease;
+}
+
+.skills-text i:hover {
+    transform: scale(1.1);
+}
+
+/* ================================= */
+/*       Experience Section          */
+/* ================================= */
+.job h4 {
+    font-size: 16px;
+    margin: 5px 0;
+    color: #000;
+}
+
+.job p {
+    font-size: 14px;
+    margin: 5px 0;
+    color: #000;
+}
+
+.job ul {
+    margin: 5px 0 10px 20px;
+    padding: 0;
+}
+
+.job ul li {
+    font-size: 14px;
+    color: #000;
+    line-height: 1.4;
+    margin-bottom: 5px;
+}
+
+/* ================================= */
+/*       Education Section           */
+/* ================================= */
+.section p {
+    font-size: 14px;
+    margin: 5px 0;
+    color: #000;
+}
+
+/* ================================= */
+/*         Responsive Styles         */
+/* ================================= */
+
+/* For devices up to 1024px */
+@media screen and (max-width: 1024px) {
+    .resume-container {
+        width: 100%;
+        padding: 15mm;
+    }
+    .header-content h1 {
+        font-size: 26px;
+    }
+    .header-content h2 {
+        font-size: 15px;
+    }
+    .header-content .contact {
+        font-size: 13px;
+    }
+    .section h3 {
+        font-size: 17px;
+    }
+    .summary-text,
+    .job p,
+    .job ul li,
+    .section p,
+    .skills-text span {
+        font-size: 13px;
+    }
+}
+
+/* For devices up to 768px (tablets) */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    .resume-container {
+        width: 100%;
+        padding: 10mm;
+        min-height: auto;
+    }
+    .header-content h1 {
+        font-size: 24px;
+    }
+    .header-content h2 {
+        font-size: 14px;
+        text-align: center;
+        margin-top: 5px;
+    }
+    .header-content .contact {
+        font-size: 12px;
+        gap: 10px;
+    }
+    .section h3 {
+        font-size: 16px;
+    }
+    .summary-text,
+    .job p,
+    .job ul li,
+    .section p,
+    .skills-text span {
+        font-size: 12px;
+    }
+    .skills-text {
+        gap: 8px;
+    }
+    .skills-text span {
+        flex: 1 1 calc(100% - 8px); /* Stack skills one per row */
+    }
+}
+
+/* For devices up to 480px (small mobiles) */
+@media screen and (max-width: 480px) {
+    .header-content h1 {
+        font-size: 22px;
+    }
+    .header-content h2 {
+        font-size: 13px;
+    }
+    .header-content .contact {
+        font-size: 11px;
+        gap: 8px;
+    }
+    .section h3 {
+        font-size: 15px;
+    }
+    .summary-text,
+    .job p,
+    .job ul li,
+    .section p,
+    .skills-text span {
+        font-size: 11px;
+    }
+}
+
+/* ================================= */
+/*         Print Styles              */
+/* ================================= */
+@media print {
+    body, .resume-container {
+        margin: 0;
+        box-shadow: none;
+    }
+    .resume-container {
+        width: 210mm;
+        min-height: 297mm;
+        padding: 20mm;
+    }
+}
+.header-content h1:hover {
+    color: #5d3a8a; /* Dark Lavender on hover */
+}
+
+.header-content h1:active {
+    color: #333; /* Darker shade when clicked */
+}
+
+@keyframes flipInX {
+    from {
+        transform: perspective(400px) rotateX(90deg);
+        opacity: 0;
+    }
+    to {
+        transform: perspective(400px) rotateX(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInBounce {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    60% {
+        transform: translateX(10px);
+        opacity: 1;
+    }
+    80% {
+        transform: translateX(-5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
